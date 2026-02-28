@@ -1,11 +1,11 @@
-#TF001-Análise Arquitetural: Instagram
+# TF001-Análise Arquitetural: Instagram
 
-##Aluno
+## Aluno
 - **Nome:** Matheus Santos Aguero
 - **RA:** 6326149
 - **Curso:** Análise e Desenvolvimento de Sistemas
 
-##Sistema Analisado
+## Sistema Analisado
 - **Nome:** Instagram
 - **Caregoria:** Rede Social
 - **Plataforma:** Mobile e Desktop
