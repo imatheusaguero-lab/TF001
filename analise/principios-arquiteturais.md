@@ -3,7 +3,6 @@
 ## **Separação de Responsabilidades**
 
 **Módulos Identificados :**
-
 1. Módulo do Usuário (Front-end)
 - Aplicativos para android e iOS
 - Versão Web 
