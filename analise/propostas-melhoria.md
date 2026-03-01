@@ -1,3 +1,40 @@
+# Proposta 1 – Maior Transparência e Controle do Algoritmo de Feed
+## 📌 Problema Identificado
+O feed do Instagram é altamente dependente de algoritmos de recomendação baseados em aprendizado de máquina.
+Apesar de eficiente em gerar engajamento, ele apresenta:
+- Baixa transparência sobre critérios de ranqueamento
+- Formação de bolhas de conteúdo
+- Redução do controle do usuário sobre o que consome
+- Forte acoplamento entre sistema de ranking e sistema de dados comportamentais
+
+Arquiteturalmente, o algoritmo atua como um “núcleo crítico” do sistema.
+
+## 🛠️ Proposta de Solução
+Implementar um mecanismo híbrido de feed configurável, permitindo ao usuário escolher entre:
+- Feed 100% algorítmico (modelo atual)
+- Feed cronológico
+- Feed baseado em categorias selecionadas (ex: amigos, criadores, negócios)
+
+## Alteração Arquitetural
+- Introduzir uma camada de abstração no serviço de geração de feed
+- Separar o mecanismo de ranking da lógica de entrega
+- Criar múltiplos "strategies" de ranqueamento (Strategy Pattern arquitetural)
+- Isso reduziria o acoplamento entre:
+- Algoritmo de ML
+- Serviço de entrega do feed
+
+## 🎯 Benefícios Esperados
+- Maior transparência e confiança
+- Redução de críticas sobre manipulação algorítmica
+- Melhor experiência personalizada
+- Redução do risco regulatório
+
+⚖️ Trade-offs da Proposta
+- ❌ Maior complexidade arquitetural
+- ❌ Aumento do custo computacional
+- ❌ Possível redução do tempo médio de permanência
+É uma melhoria estratégica, mas pode impactar receita publicitária.
+
 # Proposta 3 – Arquitetura Unificada de Search & Discovery
 
 ## 📌 Problema Identificado
@@ -16,7 +53,8 @@ Implementar uma Search Platform unificada, com:
 - Autocomplete inteligente
 - Sugestões preditivas
 
-Arquiteturalmente envolveria:
+## Arquitetura
+envolveria:
 - Camada dedicada de Search Service
 - Motor de indexação distribuído (ex: ElasticSearch-like)
 - Pipeline de atualização near real-time
