@@ -1,8 +1,8 @@
 # TF001-Análise Arquitetural: Instagram
 
-## Aluno
-- **Nome:** Matheus Santos Aguero
-- **RA:** 6326149
+## Alunos
+- **Nome:** Matheus Santos Aguero, Rian do Prado Oliveira
+- **RA:** 6326149, 6326066
 - **Curso:** Análise e Desenvolvimento de Sistemas
 
 ## Sistema Analisado
