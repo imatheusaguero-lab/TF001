@@ -1,8 +1,8 @@
 # TF001-Análise Arquitetural: Instagram
 
 ## Alunos
-- **Nome:** Matheus Santos Aguero, Rian do Prado Oliveira, Manuelly Businari Vilas Boas, Eduardo Oliveira Ceschielli Ferreira
-- **RA:** 6326149, 6326066, 6326156, 6326249
+- **Nome:** Matheus Santos Aguero, Rian do Prado Oliveira, Manuelly Businari Vilas Boas, Eduardo Oliveira Ceschielli Ferreira, Gabriel Hamzeh Rubião
+- **RA:** 6326149, 6326066, 6326156, 6326249,6126070
 - **Curso:** Análise e Desenvolvimento de Sistemas
 
 ## Sistema Analisado
