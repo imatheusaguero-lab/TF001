@@ -1,8 +1,8 @@
 # TF001 - Análise Arquitetural: Instagram
 
 ## Alunos
-- **Nome:** Matheus Santos Aguero, Rian do Prado Oliveira, Manuelly Businari Vilas Boas, Eduardo Oliveira Ceschielli Ferreira, Gabriel Hamzeh Rubião
-- **RA:** 6326149, 6326066, 6326156, 6326249, 6126070
+- **Nome:** Matheus Santos Aguero, Rian do Prado Oliveira, Manuelly Businari Vilas Boas, Eduardo Oliveira Ceschielli Ferreira, Gabriel Hamzeh Rubião, Rodrigo Rodrigues Campeoti
+- **RA:** 6326149, 6326066, 6326156, 6326249, 6126070, 6326012.
 - **Curso:** Análise e Desenvolvimento de Sistemas
 
 ## Sistema Analisado
@@ -45,8 +45,8 @@
 - Arquitetura orientada a eventos para processamento de interações
 
 ## Diagramas
-- `diagramas/arquitetura-atual.png` — Representação da arquitetura atual do sistema (interpretação baseada na análise).
-- `diagramas/arquitetura-proposta.png` — Arquitetura proposta considerando as melhorias sugeridas.
+- `diagramas/arquitetura-atual.md` — Representação da arquitetura atual do sistema (interpretação baseada na análise).
+- `diagramas/arquitetura-proposta.md` — Arquitetura proposta considerando as melhorias sugeridas.
 
 ## Como Navegar
 1. Leia a descrição do sistema em `analise/descricao-sistema.md`
