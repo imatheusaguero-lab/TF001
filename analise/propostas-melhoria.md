@@ -1,5 +1,5 @@
 # Proposta 1 – Maior Transparência e Controle do Algoritmo de Feed
-## 📌 Problema Identificado
+## Problema Identificado
 O feed do Instagram é altamente dependente de algoritmos de recomendação baseados em aprendizado de máquina.
 Apesar de eficiente em gerar engajamento, ele apresenta:
 - Baixa transparência sobre critérios de ranqueamento
@@ -9,7 +9,7 @@ Apesar de eficiente em gerar engajamento, ele apresenta:
 
 Arquiteturalmente, o algoritmo atua como um “núcleo crítico” do sistema.
 
-## 🛠️ Proposta de Solução
+## Proposta de Solução
 Implementar um mecanismo híbrido de feed configurável, permitindo ao usuário escolher entre:
 - Feed 100% algorítmico (modelo atual)
 - Feed cronológico
@@ -23,7 +23,7 @@ Implementar um mecanismo híbrido de feed configurável, permitindo ao usuário 
 - Algoritmo de ML
 - Serviço de entrega do feed
 
-## 🎯 Benefícios Esperados
+## Benefícios Esperados
 - Maior transparência e confiança
 - Redução de críticas sobre manipulação algorítmica
 - Melhor experiência personalizada
@@ -37,7 +37,7 @@ Implementar um mecanismo híbrido de feed configurável, permitindo ao usuário 
 
 # Proposta 2 – Arquitetura Unificada de Search & Discovery
 
-## 📌 Problema Identificado
+## Problema Identificado
 O sistema de busca não parece centralizado como principal ponto de descoberta, diferentemente de YouTube e TikTok.
 
 Arquiteturalmente pode haver:
@@ -45,7 +45,7 @@ Arquiteturalmente pode haver:
 - Diferentes pipelines de ranking
 - Dependência forte do feed como mecanismo principal de retenção
 
-## 🛠️ Proposta de Solução
+## Proposta de Solução
 Implementar uma Search Platform unificada, com:
 - Indexação semântica (embedding + ML)
 - Ranking contextual baseado em intenção
@@ -60,7 +60,7 @@ envolveria:
 - Pipeline de atualização near real-time
 - Integração com sistema de recomendação
 
-## 🎯 Benefícios Esperados
+## Benefícios Esperados
 - Aumento do tempo médio de uso
 - Maior retenção
 - Melhor descoberta orgânica de conteúdo
