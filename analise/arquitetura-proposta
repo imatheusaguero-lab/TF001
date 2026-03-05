@@ -1,0 +1,41 @@
+# Arquitetura Proposta (Event-Driven)
+
+```mermaid
+graph TD
+
+User[Usuário]
+App[Mobile App / Web App]
+
+APIGateway[API Gateway]
+
+FeedService[Feed Service]
+UserService[User Service]
+VideoService[Video Service]
+
+EventBus[Event Bus / Message Broker]
+
+InteractionService[Interaction Service]
+RecommendationML[Recommendation System ML]
+
+UserDB[(User Database)]
+VideoStorage[(Video Storage)]
+InteractionDB[(Interaction Database)]
+
+User --> App
+App --> APIGateway
+
+APIGateway --> FeedService
+APIGateway --> UserService
+APIGateway --> VideoService
+
+FeedService --> EventBus
+InteractionService --> EventBus
+
+EventBus --> RecommendationML
+
+RecommendationML --> InteractionDB
+
+UserService --> UserDB
+VideoService --> VideoStorage
+InteractionService --> InteractionDB
+```

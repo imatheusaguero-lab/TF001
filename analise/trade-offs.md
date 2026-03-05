@@ -31,10 +31,10 @@ Esse trade-off faz sentido porque a receita do Instagram (anúncios) depende dir
 
 ## Trade-off: Personalização Algorítmica vs Transparência
 
-Decisão tomada:
+### Decisão tomada:
 Priorizar um feed altamente personalizado baseado em algoritmos complexos.
 
-Justificativa:
+### Justificativa:
 O feed não é cronológico. Ele é ranqueado com base em:
 - Interações anteriores
 - Tempo de visualização
@@ -50,7 +50,7 @@ Por outro lado, isso reduz:
 - Transparência sobre como o conteúdo é exibido
 - Controle do usuário sobre o que vê
 
-Impacto:
+### Impacto:
 - ✅ Maior engajamento
 - ✅ Mais tempo na plataforma
 - ❌ Questionamentos éticos
@@ -63,10 +63,10 @@ Arquiteturalmente, isso implica forte dependência entre:
 
 ## Trade-off: Consistência vs Disponibilidade
 
-Decisão tomada:
+### Decisão tomada:
 Priorizar disponibilidade em vez de consistência imediata (modelo eventual consistency).
 
-Justificativa:
+### Justificativa:
 Em sistemas distribuídos de grande escala, garantir que todos os dados estejam 100% sincronizados em tempo real aumenta drasticamente:
 - Latência
 - Complexidade
@@ -81,7 +81,7 @@ Isso indica uso provável de:
 - Bancos NoSQL distribuídos
 - Estratégias de cache
 
-Impacto:
+### Impacto:
 - ✅ Sistema permanece disponível mesmo sob falhas
 - ✅ Melhor escalabilidade global
 - ❌ Pequenas inconsistências temporárias
@@ -90,10 +90,10 @@ Essa decisão é comum em arquiteturas distribuídas de larga escala.
 
 ## Trade-off: Segurança vs Usabilidade
 
-Decisão tomada:
+### Decisão tomada:
 Equilibrar proteção da conta com fluidez da experiência.
 
-Justificativa:
+### Justificativa:
 O Instagram implementa:
 - Autenticação de dois fatores
 - Alertas de login
@@ -103,7 +103,7 @@ Porém, exigir validações excessivas poderia:
 - Aumentar abandono
 - Reduzir engajamento
 
-Impacto:
+### Impacto:
 ✅ Proteção contra invasões
 ✅ Confiança do usuário
 ❌ Pequeno aumento de fricção no login

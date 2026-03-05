@@ -19,7 +19,8 @@ Implementar um mecanismo híbrido de feed configurável, permitindo ao usuário 
 - Introduzir uma camada de abstração no serviço de geração de feed
 - Separar o mecanismo de ranking da lógica de entrega
 - Criar múltiplos "strategies" de ranqueamento (Strategy Pattern arquitetural)
-- Isso reduziria o acoplamento entre:
+
+Isso reduziria o acoplamento entre:
 - Algoritmo de ML
 - Serviço de entrega do feed
 
@@ -29,45 +30,65 @@ Implementar um mecanismo híbrido de feed configurável, permitindo ao usuário 
 - Melhor experiência personalizada
 - Redução do risco regulatório
 
-⚖️ Trade-offs da Proposta
+## Trade-offs da Proposta
 - ❌ Maior complexidade arquitetural
 - ❌ Aumento do custo computacional
 - ❌ Possível redução do tempo médio de permanência
 É uma melhoria estratégica, mas pode impactar receita publicitária.
 
-# Proposta 2 – Arquitetura Unificada de Search & Discovery
+# Proposta 2 – Arquitetura Orientada a Eventos para Interações
 
 ## Problema Identificado
-O sistema de busca não parece centralizado como principal ponto de descoberta, diferentemente de YouTube e TikTok.
+O Instagram processa um volume extremamente alto de interações entre usuários, como:
+- Curtidas
+- Comentários
+- Compartilhamentos
+- Visualizações de conteúdo
+- Seguimentos de perfis
 
-Arquiteturalmente pode haver:
-- Múltiplos mecanismos de indexação
-- Diferentes pipelines de ranking
-- Dependência forte do feed como mecanismo principal de retenção
+Essas interações geram um fluxo massivo de atualizações que precisam ser processadas rapidamente por diversos sistemas, como:
+- Atualização de contadores de curtidas
+- Atualização do ranking do feed
+- Sistemas de recomendação
+- Sistemas de analytics
+- Sistemas de notificação
 
-## Proposta de Solução
-Implementar uma Search Platform unificada, com:
-- Indexação semântica (embedding + ML)
-- Ranking contextual baseado em intenção
-- Unificação de perfis, vídeos, hashtags e áudios em um único motor
-- Autocomplete inteligente
-- Sugestões preditivas
+Caso esse processamento seja feito de forma síncrona entre os serviços, isso pode gerar:
+- Alto acoplamento entre microserviços
+- Aumento de latência
+- Gargalos de processamento
+- Baixa escalabilidade
 
-## Arquitetura
-envolveria:
-- Camada dedicada de Search Service
-- Motor de indexação distribuído (ex: ElasticSearch-like)
-- Pipeline de atualização near real-time
-- Integração com sistema de recomendação
+## Proposta de Solução:
+Implementar uma arquitetura orientada a eventos (Event-Driven Architecture), na qual as interações dos usuários são publicadas como eventos em um sistema de mensageria distribuído.
+Exemplo de evento:
+- `like_created`
+- `comment_created`
+- `follow_created`
+- `video_viewed`
+Esses eventos seriam consumidos de forma assíncrona por diferentes serviços do sistema.
+
+## Alteração Arquitetural
+A arquitetura passaria a incluir:
+- Um **Event Broker** (ex: Kafka-like ou Pub/Sub)
+- Serviços produtores de eventos (serviço de interação do usuário)
+- Serviços consumidores de eventos, como:
+  - Serviço de recomendação
+  - Serviço de analytics
+  - Serviço de notificações
+  - Serviço de atualização de métricas
+Esse modelo reduz a comunicação direta entre serviços e permite que múltiplos sistemas reajam aos mesmos eventos.
 
 ## Benefícios Esperados
-- Aumento do tempo médio de uso
-- Maior retenção
-- Melhor descoberta orgânica de conteúdo
-- Redução da dependência exclusiva do feed
+- Redução do acoplamento entre serviços
+- Melhor escalabilidade horizontal
+- Processamento assíncrono de grandes volumes de dados
+- Maior flexibilidade para adicionar novos serviços consumidores de eventos
+- Melhor suporte para sistemas de recomendação e analytics
 
-⚖️ Trade-offs da Proposta
-- ❌ Aumento significativo de custo computacional
-- ❌ Maior complexidade na indexação de vídeos
-- ❌ Maior processamento de dados comportamentais
-- ❌ Risco de sobreposição com sistema de recomendação
+## Trade-offs da Proposta
+❌ Maior complexidade arquitetural  
+❌ Necessidade de gerenciamento de filas e eventos  
+❌ Possibilidade de inconsistências temporárias entre serviços
+
+Mesmo com esses desafios, arquiteturas orientadas a eventos são amplamente utilizadas em sistemas distribuídos de grande escala.

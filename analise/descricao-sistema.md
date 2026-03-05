@@ -23,4 +23,3 @@ O Instagram é uma rede social focada no compartilhamento de imagens, vídeos e 
 - Mobile (principal)
 - Web
 - APIs externas para anúncios e analytics
-O sistema possui múltiplas funcionalidades, organizadas em diferentes domínios de negócio:
